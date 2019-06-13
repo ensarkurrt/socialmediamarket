@@ -1,0 +1,33 @@
+
+RewriteEngine on
+
+#RewriteCond %{SERVER_PORT} 80
+#RewriteRule ^(.*)$ http://www.site_adi.com/$1 [R,L]
+
+#RewriteCond %{HTTP_HOST} ^site_adi.com. [NC]
+#RewriteRule ^(.*)$ http://www.site_adi.com/$1 [L,R=301,NC]
+
+#RewriteCond %{HTTPS} off
+#RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R,L]
+
+#php_flag register_globals on
+
+#Seo url oluşturma
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php
+
+#404 hata sayfası yönlendirme kodu
+#ErrorDocument 404 https://yysgarajtasarim.com/404
+
+
+RewriteRule ^ticketview-([0-9]+)$  ticketview.php?ticket_id=$1 [L,QSA]
+RewriteRule ^categoryview-([0-9]+)$  categoryview.php?category_id=$1 [L,QSA]
+RewriteRule ^serviceview-([0-9]+)$  serviceview.php?service_id=$1 [L,QSA]
+
+
+
+
+
+
+#RewriteRule ^urun-([0-9a-zA-Z-_]+)  urun-detay.php?sef=$1 [L,QSA]
