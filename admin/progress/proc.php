@@ -30,6 +30,36 @@ if(isset($_GET['proc'])){
 
     }
 
+    if($_GET['proc'] == 'deleteCategory'){
+      $delete=$db->prepare("DELETE  FROM category WHERE id={$_GET['category_id']}");
+      $sil=$delete->execute();
+      if($sil){
+        header('Location:../categories?stats=ok');
+      }else{
+        header('Location:../categories');
+      }
+    }
+
+    if($_GET['proc'] == 'deleteService'){
+      $delete=$db->prepare("DELETE  FROM services WHERE id={$_GET['service_id']}");
+      $sil=$delete->execute();
+      if($sil){
+        header('Location:../services?status=ok');
+      }else{
+        header('Location:../services');
+      }
+    }
+
+    if($_GET['proc'] == 'deleteShopierLink'){
+      $delete=$db->prepare("DELETE  FROM shopier_id WHERE id={$_GET['shopierlink_id']}");
+      $sil=$delete->execute();
+      if($sil){
+        header('Location:../shopierlinks?stats=ok');
+      }else{
+        header('Location:../shopierlinks');
+      }
+    }
+
     if($_GET['proc'] == 'activeService'){
 
       $duzenle=$db->prepare("UPDATE services SET

@@ -22,6 +22,8 @@ require_once('inc/header.php');
                   <a href='categories?status=1' class="btn btn-success mr-2"> Aktif Kategoriler</a>
                   <a href='categories?status=0' class="btn btn-danger mr-2"> Pasif Kategoriler</a>
                   <a href='categories' class="btn btn-info mr-2"> Tüm Kategoriler</a>
+                  <a href='categoryadd' class="btn btn-info mr-2">Kategori Ekle</a>
+
                 </div>
                 </div>
                 </div>
@@ -104,10 +106,11 @@ require_once('inc/header.php');
                                       <?php  } ?>
                                       </td>
                                       <td>
-                                        <a href="services?category=<?=$takeCategory['id']?>" class="btn btn-success">Ürünleri görüntüle</a>
+                                        <a href="services?category=<?=$takeCategory['id']?>" class="btn btn-success">Servisleri görüntüle</a>
                                       </td>
                                       <td class="text-danger">
                                         <a href="categoryview-<?php echo $takeCategory['id']; ?>" class="btn btn-info">Düzenle</a>
+                                        <a href="progress/proc.php?category_id=<?php echo $takeCategory['id']; ?>&proc=deleteCategory&from=main" class="btn btn-danger">Sil</a>
                                       </td>
                                     </tr>
                             <?php  }  ?>

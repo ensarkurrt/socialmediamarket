@@ -182,6 +182,11 @@ require_once('inc/header.php');
                               </div>
 
                               <div class="form-group">
+                                <label for="paywant_desc">Paywant Açıklama </label><span class="text-danger"> *</span>
+                                <textarea class="ckeditor" id="paywant_desc" placeholder="Paywant Açıklama"><?php echo $takeSetting['paywant_cont']; ?></textarea>
+                              </div>
+
+                              <div class="form-group">
                                 <div class="form-check form-check-flat">
                                     <label class="form-check-label">
                                       <input type="checkbox" <?php if($takeSetting['shopier']=='1'){echo "checked";} ?> class="form-check-input" id="shopierCheck"> Shopier
@@ -191,12 +196,22 @@ require_once('inc/header.php');
                               </div>
 
                               <div class="form-group">
+                                <label for="shopier_desc">Shopier Açıklama </label><span class="text-danger"> *</span>
+                                <textarea class="ckeditor" id="shopier_desc" placeholder="Shopier Açıklama"><?php echo $takeSetting['shopier_cont']; ?></textarea>
+                              </div>
+
+                              <div class="form-group">
                                 <div class="form-check form-check-flat">
                                     <label class="form-check-label">
                                       <input type="checkbox" <?php if($takeSetting['transfer']=='1'){echo "checked";} ?> class="form-check-input" id="transferCheck"> EFT/HAVALE
                                       <i class="input-helper"></i>
                                     </label>
                                 </div>
+                              </div>
+
+                              <div class="form-group">
+                                <label for="pay_desc">Genel Ödeme Açıklama </label><span class="text-danger"> *</span>
+                                <textarea class="ckeditor" id="pay_desc" placeholder="Genel Ödeme Açıklama"><?php echo $takeSetting['pay_cont']; ?></textarea>
                               </div>
 
                               <input type="button" class="btn btn-success mr-2" onclick="return savePayment()" value="Ayarları Kaydet">

@@ -70,6 +70,7 @@ require_once('../../inc/conn.php');
                           </td>
                           <td class="text-danger">
                             <a href="serviceview-<?php echo $takeService['id']; ?>" class="btn btn-info">Düzenle</a>
+                            <a href="progress/proc.php?service_id=<?php echo $takeService['id']; ?>&proc=deleteService&from=main" class="btn btn-danger">Sil</a>
                           </td>
                         </tr>
                 <?php  }  ?>

@@ -14,14 +14,14 @@
             <div class="card-header">
               <ul class="nav nav-tabs row" id="myTab" role="tablist">
                 <?php if($takeSetting['paywant']==1){?> <li class="nav-item col">
-                  <a class="nav-link payment_tab_link" data-toggle="tab" id="tab_646" href="#paywant" role="tab" aria-controls="home" aria-selected="true" data-paymentname="Paywant" data-paymentid="646"><img src="<?php echo $takeSetting['url']; ?>image/K5QEVfm.png" alt="Paywant" title="Paywant"></a>
+                  <a class="nav-link payment_tab_link" data-toggle="tab" id="tab_646" href="#paywant" role="tab" aria-controls="home" aria-selected="true" data-paymentname="Paywant" data-paymentid="646"><h6>Paywant</h6></a>
                 </li> <?php } ?>
 
                 <?php if($takeSetting['shopier']==1){?> 	<li class="nav-item col">
-      <a class="nav-link payment_tab_link" data-toggle="tab" id="tab_5790" href="#shopier" role="tab" aria-controls="home" aria-selected="false" data-paymentname="Shopier" data-paymentid="5790"><img src="<?php echo $takeSetting['url']; ?>image/aQWS0o5.png" alt="Perfect Money" title="Perfect Money"></a>
+      <a class="nav-link payment_tab_link" data-toggle="tab" id="tab_5790" href="#shopier" role="tab" aria-controls="home" aria-selected="false" data-paymentname="Shopier" data-paymentid="5790"><h6>Shopier</h6></a>
     </li> <?php } ?>
     <?php if($takeSetting['transfer']==1){?> 	<li class="nav-item col">
-    <a class="nav-link payment_tab_link" data-toggle="tab" id="tab_5790" href="#transfer" role="tab" aria-controls="home" aria-selected="false" data-paymentname="Shopier" data-paymentid="5790"><h4>EFT/HAVALE</h4></a>
+    <a class="nav-link payment_tab_link" data-toggle="tab" id="tab_5790" href="#transfer" role="tab" aria-controls="home" aria-selected="false" data-paymentname="Transfer" data-paymentid="5790"><h6>EFT/HAVALE</h6></a>
     </li> <?php } ?>
                               </ul>
             </div>
@@ -38,7 +38,7 @@
                 <div class="tab-pane fade" id="paywant" role="tabpanel" aria-labelledby="home-tab">
 
                   <div class="alert alert-dismissible alert-danger" id="danger" style="display:none">
-                    selam
+
                   </div>
 
                   <form method="post" action="">

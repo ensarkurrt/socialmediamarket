@@ -53,19 +53,19 @@
       </a>
     </li>
 
-    <!-- <li class="nav-item">
+    <li class="nav-item">
       <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
-        <i class="menu-icon mdi mdi-restart"></i>
-        <span class="menu-title">User Pages</span>
+        <i class="menu-icon mdi mdi-credit-card"></i>
+        <span class="menu-title">Ödeme Seçenekleri</span>
         <i class="menu-arrow"></i>
       </a>
       <div class="collapse" id="auth">
         <ul class="nav flex-column sub-menu">
           <li class="nav-item">
-            <a class="nav-link" href="pages/samples/blank-page.html"> Blank Page </a>
+            <a class="nav-link" href="shopierlinks"> Shopier Linkleri </a>
           </li>
         </ul>
       </div>
-    </li> -->
+    </li>
   </ul>
 </nav>

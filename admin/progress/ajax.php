@@ -23,11 +23,17 @@ if($dataType=="savePayment"){
   $duzenle=$db->prepare("UPDATE settings SET
   paywant=:paywant,
   shopier=:shopier,
+  paywant_cont=:paywant_desc,
+  shopier_cont=:shopier_desc,
+  pay_cont=:pay_desc,
   transfer=:transfer
   WHERE id=1");
   $update=$duzenle->execute(array(
   'paywant' => $_POST['paywant'],
   'shopier' => $_POST['shopier'],
+  'paywant_desc' => $_POST['paywant_desc'],
+  'shopier_desc' => $_POST['shopier_desc'],
+  'pay_desc' => $_POST['pay_desc'],
   'transfer' => $_POST['transfer']
   ));
   if($update){
@@ -77,6 +83,93 @@ if($dataType=="saveCategory"){
         echo json_encode(array('stats'=>'no'));
     }
 
+
+}
+
+if($dataType=="addCategory"){
+
+    $kaydet=$db->prepare("INSERT INTO category SET
+    name=:name,
+    enable=:enable
+    ");
+    $insert=$kaydet->execute(array(
+    'name' => $_POST['name'],
+    'enable' => $_POST['status']
+    ));
+    if($insert){
+        echo json_encode(array('stats'=>'ok'));
+    }else{
+        echo json_encode(array('stats'=>'no'));
+    }
+
+}
+
+if($dataType=="addShopierLink"){
+
+    $kaydet=$db->prepare("INSERT INTO shopier_id SET
+    amount=:amount,
+    link_id=:link_id
+    ");
+    $insert=$kaydet->execute(array(
+    'amount' => $_POST['cost'],
+    'link_id' => $_POST['link_id']
+    ));
+    if($insert){
+        echo json_encode(array('stats'=>'ok'));
+    }else{
+        echo json_encode(array('stats'=>'no'));
+    }
+
+}
+
+if($dataType=="saveShopierLink"){
+
+    $duzenle=$db->prepare("UPDATE shopier_id SET
+    amount=:amount,
+    link_id=:link_id
+    WHERE id={$_POST['data_id']}");
+    $update=$duzenle->execute(array(
+    'amount' => $_POST['cost'],
+    'link_id' => $_POST['link_id']
+    ));
+    if($update){
+        echo json_encode(array('stats'=>'ok'));
+    }else{
+        echo json_encode(array('stats'=>'no'));
+    }
+
+}
+
+if($dataType=="addService"){
+
+    if($_POST['max'] <= $_POST['min']){
+      echo json_encode(array('stats'=>'mm'));
+      exit();
+    }
+
+    $kaydet=$db->prepare("INSERT INTO services SET
+    name=:name,
+    category_id=:cat_id,
+    description=:description,
+    money=:money,
+    min=:min,
+    max=:max,
+    enable=:enable
+    ");
+    $insert=$kaydet->execute(array(
+    'name' => $_POST['name'],
+    'cat_id' => $_POST['cat_id'],
+    'description' => $_POST['description'],
+    'money' => $_POST['money'],
+    'min' => $_POST['min'],
+    'max' => $_POST['max'],
+    'enable' => $_POST['status']
+    ));
+    if($insert){
+        echo json_encode(array('stats'=>'ok'));
+    }else{
+        echo json_encode(array('stats'=>'no'));
+    }
 
 }
 
