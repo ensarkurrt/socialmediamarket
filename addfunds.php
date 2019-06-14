@@ -111,7 +111,7 @@
                 <form method="post" action="">
                   <div class="title" id="form_payment_name">EFT/HAVALE</div>
 
-                  <p id="transfer_content" style="display: block;">
+                  <div id="transfer_content" style="display: block;">
 
                     <?php
                          $pay_type=$db->prepare("SELECT * FROM pay_type");
@@ -120,7 +120,7 @@
                         echo $takePayType['description'];
                      ?>
 
-                    </p>
+                   </div>
                     <div class="form-group">
                       <label for="method" class="control-label">Banka Seçin</label>
 

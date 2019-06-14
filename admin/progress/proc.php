@@ -60,6 +60,16 @@ if(isset($_GET['proc'])){
       }
     }
 
+    if($_GET['proc'] == 'deleteBankAccount'){
+      $delete=$db->prepare("DELETE  FROM pay_type WHERE id={$_GET['account_id']}");
+      $sil=$delete->execute();
+      if($sil){
+        header('Location:../bankaccounts?stats=ok');
+      }else{
+        header('Location:../bankaccounts');
+      }
+    }
+
     if($_GET['proc'] == 'activeService'){
 
       $duzenle=$db->prepare("UPDATE services SET

@@ -114,6 +114,11 @@ if(isset($_SESSION['username'])){
   <!-- End plugin css for this page -->
   <!-- inject:css -->
   <link rel="stylesheet" href="css/style.css">
+	<style>
+		.content-wrapper {
+			background:#dae3e4;!important;
+		}
+	</style>
   <script src="js/my.js"></script>
   <!-- endinject -->
   <link rel="shortcut icon" href="images/favicon.png" />

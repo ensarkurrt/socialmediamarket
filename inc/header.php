@@ -106,7 +106,11 @@ if(isset($_SESSION['username'])){
   <![endif]-->
 
 
-
+<style>
+	.top-banner{
+		padding-bottom: 100px !important;
+	}
+</style>
 
 </head>
 

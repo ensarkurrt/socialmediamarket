@@ -64,8 +64,12 @@
           <li class="nav-item">
             <a class="nav-link" href="shopierlinks"> Shopier Linkleri </a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="bankaccounts"> Banka Hesapları </a>
+          </li>
         </ul>
       </div>
+
     </li>
   </ul>
 </nav>

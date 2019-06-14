@@ -44,6 +44,24 @@ if($dataType=="savePayment"){
 
 }
 
+if($dataType=="saveBankAccount"){
+
+  $duzenle=$db->prepare("UPDATE pay_type SET
+  name=:name,
+  description=:description
+  WHERE id={$_POST['data_id']}");
+  $update=$duzenle->execute(array(
+  'name' => $_POST['name'],
+  'description' => $_POST['description']
+  ));
+  if($update){
+      echo json_encode(array('stats'=>'ok'));
+  }else{
+      echo json_encode(array('stats'=>'no'));
+  }
+
+}
+
 if($dataType=="saveMail"){
 
   $duzenle=$db->prepare("UPDATE settings SET
@@ -95,6 +113,24 @@ if($dataType=="addCategory"){
     $insert=$kaydet->execute(array(
     'name' => $_POST['name'],
     'enable' => $_POST['status']
+    ));
+    if($insert){
+        echo json_encode(array('stats'=>'ok'));
+    }else{
+        echo json_encode(array('stats'=>'no'));
+    }
+
+}
+
+if($dataType=="addBankAccount"){
+
+    $kaydet=$db->prepare("INSERT INTO pay_type SET
+    name=:name,
+    description=:description
+    ");
+    $insert=$kaydet->execute(array(
+    'name' => $_POST['name'],
+    'description' => $_POST['description']
     ));
     if($insert){
         echo json_encode(array('stats'=>'ok'));

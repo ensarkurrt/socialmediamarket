@@ -175,6 +175,106 @@ function addCategory() {
 
 }
 
+function addBankAccount() {
+
+  document.getElementById("dangerShopier").style.display = "none";
+  document.getElementById("successShopier").style.display = "none";
+
+
+  if (document.getElementById('name').value.trim() == '') {
+    document.getElementById("dangerShopier").style.display = "block";
+    document.getElementById("dangerShopier").innerText = "Hesap adı boş bırakılamaz...";
+    return;
+  }
+
+  if (CKEDITOR.instances['description'].getData().trim() == '') {
+    document.getElementById("dangerShopier").style.display = "block";
+    document.getElementById("dangerShopier").innerText = "Açıklama boş bırakılamaz...";
+    return;
+  }
+
+
+    var name = document.getElementById('name').value;
+    var description = CKEDITOR.instances['description'].getData();
+    var dataType = 'addBankAccount';
+
+    $.ajax({
+      url: 'progress/ajax.php',
+      type: 'POST',
+      data: {
+        name: name,
+        description: description,
+        dataType: dataType
+      },
+    }).done(function(response) {
+      //response
+      var obj = JSON.parse(response);
+      if (obj['stats'] == 'ok') {
+        document.getElementById("successShopier").style.display = "block";
+        document.getElementById("successShopier").innerText = "Banka hesabı ekleme başarılı...";
+        setTimeout(function() {
+          window.location.reload();
+        }, 3000);
+      } else {
+        document.getElementById("dangerShopier").style.display = "block";
+        document.getElementById("dangerShopier").innerText = "Başarısız! Lütfen tekrar deneyin!";
+      }
+    });
+
+
+}
+
+function saveBankAccount() {
+
+  document.getElementById("dangerShopier").style.display = "none";
+  document.getElementById("successShopier").style.display = "none";
+
+
+  if (document.getElementById('name').value.trim() == '') {
+    document.getElementById("dangerShopier").style.display = "block";
+    document.getElementById("dangerShopier").innerText = "Banka adı boş bırakılamaz";
+    return;
+  }
+
+  if (CKEDITOR.instances['description'].getData().trim() == '') {
+    document.getElementById("dangerShopier").style.display = "block";
+    document.getElementById("dangerShopier").innerText = "Açıklama boş bırakılamaz";
+    return;
+  }
+
+
+  var name = document.getElementById('name').value;
+  var description = CKEDITOR.instances['description'].getData();
+  var data_id = document.getElementById('data_id').value;
+  var dataType = 'saveBankAccount';
+
+  $.ajax({
+    url: 'progress/ajax.php',
+    type: 'POST',
+    data: {
+      name: name,
+      description: description,
+      data_id: data_id,
+      dataType: dataType
+    },
+  }).done(function(response) {
+    //response
+    var obj = JSON.parse(response);
+    if (obj['stats'] == 'ok') {
+      document.getElementById("successShopier").style.display = "block";
+      document.getElementById("successShopier").innerText = "Banka hesabı düzenleme başarılı...";
+      setTimeout(function() {
+        window.location.reload();
+      }, 3000);
+    } else {
+      document.getElementById("dangerShopier").style.display = "block";
+      document.getElementById("dangerShopier").innerText = "Başarısız! Lütfen tekrar deneyin!";
+    }
+  });
+
+
+}
+
 function saveShopierLink() {
 
   document.getElementById("dangerShopier").style.display = "none";
