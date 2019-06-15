@@ -101,6 +101,65 @@ if($dataType=="saveCategory"){
         echo json_encode(array('stats'=>'no'));
     }
 
+}
+
+
+if($dataType=="savePassword"){
+
+  $password = md5($_POST['password']);
+
+    $duzenle=$db->prepare("UPDATE users SET
+    password=:password
+    WHERE id={$_POST['id']}");
+    $update=$duzenle->execute(array(
+    'password' => $password
+    ));
+    if($update){
+        echo json_encode(array('stats'=>'ok'));
+    }else{
+        echo json_encode(array('stats'=>'no'));
+    }
+
+}
+
+if($dataType=="saveBalance"){
+
+
+    $duzenle=$db->prepare("UPDATE users SET
+    balance=:balance
+    WHERE id={$_POST['id']}");
+    $update=$duzenle->execute(array(
+    'balance' => $_POST['balance']
+    ));
+    if($update){
+        echo json_encode(array('stats'=>'ok'));
+    }else{
+        echo json_encode(array('stats'=>'no'));
+    }
+
+}
+
+if($dataType=="saveUser"){
+
+
+    $duzenle=$db->prepare("UPDATE users SET
+    mail=:mail,
+    phone=:phone,
+    verified_mail=:verified_mail,
+    perm=:perm
+    WHERE id={$_POST['id']}");
+    $update=$duzenle->execute(array(
+    'mail' => $_POST['mail'],
+    'phone' => $_POST['phone'],
+    'verified_mail' => $_POST['verify'],
+    'perm' => $_POST['perm']
+    ));
+    if($update){
+        echo json_encode(array('stats'=>'ok'));
+    }else{
+        echo json_encode(array('stats'=>'no'));
+    }
+
 
 }
 

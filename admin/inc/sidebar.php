@@ -54,6 +54,20 @@
     </li>
 
     <li class="nav-item">
+      <a class="nav-link" href="orders">
+        <i class="menu-icon mdi mdi-play"></i>
+        <span class="menu-title">Siparişler</span>
+      </a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" href="users">
+        <i class="menu-icon mdi mdi-account-multiple-outline"></i>
+        <span class="menu-title">Üyeler</span>
+      </a>
+    </li>
+
+    <li class="nav-item">
       <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
         <i class="menu-icon mdi mdi-credit-card"></i>
         <span class="menu-title">Ödeme Seçenekleri</span>
@@ -66,6 +80,9 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="bankaccounts"> Banka Hesapları </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="paynotif?status=Bekleniyor"> Ödeme Bildirimleri </a>
           </li>
         </ul>
       </div>

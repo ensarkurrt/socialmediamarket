@@ -378,6 +378,78 @@ function saveCategory() {
 
 }
 
+
+
+function saveUser() {
+
+  document.getElementById("dangerUser").style.display = "none";
+  document.getElementById("successUser").style.display = "none";
+
+
+  if (document.getElementById('mail').value.trim() == '') {
+    document.getElementById("dangerUser").style.display = "block";
+    document.getElementById("dangerUser").innerText = "E-Mail adresi boş bırakılamaz...";
+    return;
+  }
+
+  if (document.getElementById('phone').value.trim() == '') {
+    document.getElementById("dangerUser").style.display = "block";
+    document.getElementById("dangerUser").innerText = "Telefon numarası boş bırakılamaz...";
+    return;
+  }
+
+  if (document.getElementById('status').value == 0 || document.getElementById('status').value == 1) {
+
+    if(document.getElementById('perm').value == 0 || document.getElementById('perm').value == 1) {
+
+      var mail = document.getElementById('mail').value;
+      var phone = document.getElementById('phone').value;
+      var verify = document.getElementById('status').value;
+      var perm = document.getElementById('perm').value;
+
+      var id = document.getElementById('cat_id').value;
+
+      var dataType = 'saveUser';
+
+      $.ajax({
+        url: 'progress/ajax.php',
+        type: 'POST',
+        data: {
+          mail: mail,
+          phone: phone,
+          verify: verify,
+          perm: perm,
+          id: id,
+          dataType: dataType
+        },
+      }).done(function(response) {
+        //response
+        var obj = JSON.parse(response);
+        if (obj['stats'] == 'ok') {
+          document.getElementById("successUser").style.display = "block";
+          document.getElementById("successUser").innerText = "Ayarlarınız değiştirildi...";
+          setTimeout(function() {
+            window.location.reload();
+          }, 3000);
+        } else {
+          document.getElementById("dangerUser").style.display = "block";
+          document.getElementById("dangerUser").innerText = "Başarısız! Lütfen tekrar deneyin!";
+        }
+      });
+    }else{
+      document.getElementById("dangerUser").style.display = "block";
+      document.getElementById("dangerUser").innerText = "Kodlarla oynama :)";
+      return;
+    }
+
+  } else {
+    document.getElementById("dangerUser").style.display = "block";
+    document.getElementById("dangerUser").innerText = "Kodlarla oynama :)";
+    return;
+  }
+
+}
+
 function saveService() {
 
   document.getElementById("dangerService").style.display = "none";
@@ -676,6 +748,80 @@ function saveMail() {
       document.getElementById("dangerMail").innerText = "Başarısız! Lütfen tekrar deneyin!";
     }
     document.getElementById("goToMail").scrollIntoView();
+  });
+
+}
+
+
+
+function savePassword() {
+
+  document.getElementById("dangerPassword").style.display = "none";
+  document.getElementById("successPassword").style.display = "none";
+
+  var password = document.getElementById('newPassword').value;
+  var id = document.getElementById('cat_id').value;
+
+
+  var dataType = 'savePassword';
+
+  $.ajax({
+    url: 'progress/ajax.php',
+    type: 'POST',
+    data: {
+      password: password,
+      id: id,
+      dataType:dataType
+    },
+  }).done(function(response) {
+    //response
+    var obj = JSON.parse(response);
+    if (obj['stats'] == 'ok') {
+      document.getElementById("successPassword").style.display = "block";
+      document.getElementById("successPassword").innerText = "Şifre değiştirildi...";
+      setTimeout(function() {
+        window.location.reload();
+      }, 3000);
+    } else {
+      document.getElementById("dangerPassword").style.display = "block";
+      document.getElementById("dangerPassword").innerText = "Başarısız! Lütfen tekrar deneyin!";
+    }
+  });
+
+}
+
+function saveBalance() {
+
+  document.getElementById("dangerBalance").style.display = "none";
+  document.getElementById("successBalance").style.display = "none";
+
+  var balance = document.getElementById('balance').value;
+  var id = document.getElementById('cat_id').value;
+
+
+  var dataType = 'saveBalance';
+
+  $.ajax({
+    url: 'progress/ajax.php',
+    type: 'POST',
+    data: {
+      balance: balance,
+      id: id,
+      dataType:dataType
+    },
+  }).done(function(response) {
+    //response
+    var obj = JSON.parse(response);
+    if (obj['stats'] == 'ok') {
+      document.getElementById("successBalance").style.display = "block";
+      document.getElementById("successBalance").innerText = "Bakiye değiştirildi...";
+      setTimeout(function() {
+        window.location.reload();
+      }, 3000);
+    } else {
+      document.getElementById("dangerBalance").style.display = "block";
+      document.getElementById("dangerBalance").innerText = "Başarısız! Lütfen tekrar deneyin!";
+    }
   });
 
 }

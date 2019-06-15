@@ -26,6 +26,9 @@ RewriteRule ^categoryview-([0-9]+)$  categoryview.php?category_id=$1 [L,QSA]
 RewriteRule ^serviceview-([0-9]+)$  serviceview.php?service_id=$1 [L,QSA]
 RewriteRule ^shopierlinkview-([0-9]+)$  shopierlinkview.php?shopierlink_id=$1 [L,QSA]
 RewriteRule ^bankaccountview-([0-9]+)$  bankaccountview.php?account_id=$1 [L,QSA]
+RewriteRule ^notifview-([0-9]+)$  notifview.php?notif_id=$1 [L,QSA]
+RewriteRule ^orderview-([0-9]+)$  orderview.php?order_id=$1 [L,QSA]
+RewriteRule ^userview-([0-9]+)$  userview.php?user_id=$1 [L,QSA]
 
 
 

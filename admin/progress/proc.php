@@ -70,6 +70,16 @@ if(isset($_GET['proc'])){
       }
     }
 
+    if($_GET['proc'] == 'deleteNotif'){
+      $delete=$db->prepare("DELETE  FROM transferPay WHERE id={$_GET['notif_id']}");
+      $sil=$delete->execute();
+      if($sil){
+        header('Location:../paynotif?stats=ok');
+      }else{
+        header('Location:../paynotif');
+      }
+    }
+
     if($_GET['proc'] == 'activeService'){
 
       $duzenle=$db->prepare("UPDATE services SET
@@ -93,6 +103,67 @@ if(isset($_GET['proc'])){
       }
 
     }
+
+        if($_GET['proc'] == 'activeNotif'){
+
+          $duzenle=$db->prepare("UPDATE transferPay SET
+          stats=:stats
+          WHERE id={$_GET['notif_id']}");
+          $update=$duzenle->execute(array(
+          'stats' => 'Odendi'
+          ));
+          if($update){
+            $notifs=$db->prepare("SELECT * FROM transferPay where id=:id");
+            $notifs->execute(array(
+              'id' => $_GET['notif_id']
+            ));
+            $takeNotif=$notifs->fetch(PDO::FETCH_ASSOC);
+
+            $users=$db->prepare("SELECT * FROM users where username=:username");
+            $users->execute(array(
+              'username' => $_SESSION['username']
+            ));
+            $takeUser=$users->fetch(PDO::FETCH_ASSOC);
+
+            $balance = $takeUser['balance'] + $takeNotif['amount'];
+
+
+            $duzenle=$db->prepare("UPDATE users SET
+            balance=:balance
+            WHERE id={$takeUser['id']}");
+            $update=$duzenle->execute(array(
+            'balance' => $balance
+            ));
+            if($update){
+                header('Location:../paynotif?stats=ok');
+            }else{
+                header('Location:../paynotif');
+            }
+          }else{
+              header('Location:../paynotif');
+          }
+
+
+
+        }
+
+        if($_GET['proc'] == 'cancelNotif'){
+
+          $duzenle=$db->prepare("UPDATE transferPay SET
+          stats=:stats
+          WHERE id={$_GET['notif_id']}");
+          $update=$duzenle->execute(array(
+          'stats' => 'Iptal Edildi'
+          ));
+          if($update){
+              header('Location:../paynotif?stats=ok');
+          }else{
+              header('Location:../paynotif');
+          }
+
+        }
+
+
 
     if($_GET['proc'] == 'passiveService'){
 

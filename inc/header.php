@@ -145,8 +145,9 @@ if(isset($_SESSION['username'])){
           </span>
         </button>
         <a class="navbar-brand" href="home">
-          <img src="https://perfectcdn.com/f0f01109-7642-481c-a427-b7c1cfdf25ea/" alt="<?php echo $takeSetting['name']; ?> | <?php echo $takeSetting['slogan']; ?>" title="<?php echo $takeSetting['name']; ?> | <?php echo $takeSetting['slogan']; ?>">
-        </a>
+          <!-- <img src="https://perfectcdn.com/f0f01109-7642-481c-a427-b7c1cfdf25ea/" alt="<?php echo $takeSetting['name']; ?> | <?php echo $takeSetting['slogan']; ?>" title="<?php echo $takeSetting['name']; ?> | <?php echo $takeSetting['slogan']; ?>"> -->
+					<h3 style="color:white"><?php echo $takeSetting['name']; ?></h3>
+			  </a>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
 <?php if(!empty($_SESSION['username'])){?>
