@@ -185,7 +185,7 @@ function chooseBankFunc(selectObject) {
 
 function transferPay() {
   document.getElementById("success").style.display = "none";
-  document.getElementById("danger").style.display = "none";
+  document.getElementById("danger1").style.display = "none";
   var bankId = document.getElementById("chooseBank").value;
   var amount = document.getElementById("transferAmount").value;
   var dataType = "transferPay";
@@ -205,8 +205,8 @@ function transferPay() {
       document.getElementById("success").style.display = "block";
       document.getElementById("success").innerText = "Ödeme Bildirimi Başarılı! Takip Numaranız : #" + obj['number'] + ". Not almayı unutmayınız!";
     } else if (obj['stats'] == "no") {
-      document.getElementById("danger").style.display = "block";
-      document.getElementById("danger").innerText = "Bildirim yapılamadı! Lütfen daha sonra tekrar deneyin...";
+      document.getElementById("danger1").style.display = "block";
+      document.getElementById("danger1").innerText = "Bildirim yapılamadı! Lütfen daha sonra tekrar deneyin...";
     }
   });
 }

@@ -95,9 +95,41 @@ if(isset($_SESSION['username'])){
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title><? echo $takeSetting['name'];?> | <? echo $takeSetting['slogan'];?></title>
-  <meta name="keywords" content="Sosyal Medya Paneli,BDD Medya,Instagram Bayilik Paneli,Facebook Begeni,Instagram,Begeni,Instagram Takipçi,Facebook Takipçi,Twitter Fav,Twitter Takipçi">
-  <meta name="description" content="Sosyal Medya Bayilik,Instagram Takipçi İnstagram Beğeni Bayilik Paneli Sosyal Medya Hizmetleri Facebook Twitter Youtube İnstagram İzlenme Twitter Takipçi.">
-  <link rel="shortcut icon" type="image/ico" href="https://perfectcdn.com/3e9b918f-7bc8-436f-85e4-16dace3040e0/">
+	<meta name="keywords" content="<?=$takeSetting['keywords']?>">
+  <meta name="description" content="<?=$takeSetting['description']?>">
+
+	<link rel="apple-touch-icon" sizes="57x57" href="favicons/apple-icon-57x57.png">
+	 <link rel="apple-touch-icon" sizes="60x60" href="favicons/apple-icon-60x60.png">
+	 <link rel="apple-touch-icon" sizes="72x72" href="favicons/apple-icon-72x72.png">
+	 <link rel="apple-touch-icon" sizes="76x76" href="favicons/apple-icon-76x76.png">
+	 <link rel="apple-touch-icon" sizes="114x114" href="favicons/apple-icon-114x114.png">
+	 <link rel="apple-touch-icon" sizes="120x120" href="favicons/apple-icon-120x120.png">
+	 <link rel="apple-touch-icon" sizes="144x144" href="favicons/apple-icon-144x144.png">
+	 <link rel="apple-touch-icon" sizes="152x152" href="favicons/apple-icon-152x152.png">
+	 <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-icon-180x180.png">
+	 <link rel="icon" type="image/png" sizes="192x192"  href="favicons/android-icon-192x192.png">
+	 <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
+	 <link rel="icon" type="image/png" sizes="96x96" href="favicons/favicon-96x96.png">
+	 <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
+
+
+
+ <!-- Externel css -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css">
+
+ <link rel="stylesheet" type="text/css" href="css/panel/1554802291/bootstrap.css">
+ <link rel="stylesheet" type="text/css" href="css/panel/1554802291/style.css">
+ <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+ <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css">
+
+ <!-- Font -->
+ <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,600i,700,700i,800">
+ <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+
+
+ <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+ <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -117,25 +149,6 @@ if(isset($_SESSION['username'])){
 <body>
   <div style="position:fixed;top:0px;left:0px;width:0;height:0;" id="scrollzipPoint"></div>
 
-  <!-- Externel css -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css">
-
-  <link rel="stylesheet" type="text/css" href="css/panel/1554802291/bootstrap.css">
-  <link rel="stylesheet" type="text/css" href="css/panel/1554802291/style.css">
-  <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css">
-
-  <!-- Font -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,600i,700,700i,800">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
-
-
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-
-
-
   <header class="bg-blue">
     <div class="container">
       <nav class="navbar navbar-expand-lg">
@@ -145,8 +158,8 @@ if(isset($_SESSION['username'])){
           </span>
         </button>
         <a class="navbar-brand" href="home">
-          <!-- <img src="https://perfectcdn.com/f0f01109-7642-481c-a427-b7c1cfdf25ea/" alt="<?php echo $takeSetting['name']; ?> | <?php echo $takeSetting['slogan']; ?>" title="<?php echo $takeSetting['name']; ?> | <?php echo $takeSetting['slogan']; ?>"> -->
-					<h3 style="color:white"><?php echo $takeSetting['name']; ?></h3>
+					<img src="image/adklogo.png" alt="<?php echo $takeSetting['name']; ?> | <?php echo $takeSetting['slogan']; ?>" title="<?php echo $takeSetting['name']; ?> | <?php echo $takeSetting['slogan']; ?>">
+				 				<!-- 	<h3 style="color:white"><?php // echo $takeSetting['name']; ?></h3>-->
 			  </a>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
