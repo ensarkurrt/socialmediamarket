@@ -97,7 +97,7 @@ if(isset($_SESSION['username'])){
   <title><? echo $takeSetting['name'];?> | <? echo $takeSetting['slogan'];?></title>
 	<meta name="keywords" content="<?=$takeSetting['keywords']?>">
   <meta name="description" content="<?=$takeSetting['description']?>">
-
+<link rel="shortcut icon" href="favicons/favicon.ico">
 	<link rel="apple-touch-icon" sizes="57x57" href="favicons/apple-icon-57x57.png">
 	 <link rel="apple-touch-icon" sizes="60x60" href="favicons/apple-icon-60x60.png">
 	 <link rel="apple-touch-icon" sizes="72x72" href="favicons/apple-icon-72x72.png">
