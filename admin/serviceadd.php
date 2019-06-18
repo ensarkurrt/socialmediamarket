@@ -89,7 +89,7 @@ require_once('inc/header.php');
                               </div>
 
 
-                              <input type="button" class="btn btn-success mr-2" onclick="return addService()" value="Kategori Kaydet">
+                              <input type="button" class="btn btn-success mr-2" onclick="return addService()" value="Servis Ekle">
                             </form>
                           </div>
                         </div>

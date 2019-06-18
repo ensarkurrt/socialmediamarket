@@ -215,7 +215,7 @@ $totalUyeCount=$totalUye->rowCount();
                                                       Yönet
                                                     </button>
                                                     <div class="dropdown-menu">
-                                                      <a class="dropdown-item" href="#">
+                                                      <a class="dropdown-item" href="ticketview-<?php echo $takeTickets['id']; ?>">
                                                         <i class="fa fa-reply fa-fw"></i>Görüntüle
                                                       </a>
                                                     </div>

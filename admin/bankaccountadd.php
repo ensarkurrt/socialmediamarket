@@ -35,7 +35,7 @@ require_once('inc/header.php');
                                 <textarea class="ckeditor" id="description" placeholder="Açıklama"></textarea>
                               </div>
 
-                              <input type="button" class="btn btn-success mr-2" onclick="return addBankAccount()" value="Link Ekle">
+                              <input type="button" class="btn btn-success mr-2" onclick="return addBankAccount()" value="Hesap Ekle">
                             </form>
                           </div>
                         </div>

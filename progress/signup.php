@@ -90,7 +90,8 @@ if(isset($_POST['newuser'])){
         							if ($insert) {
                         //Success
         								$_SESSION['username']=$username;
-        								header("Location:../index");
+        								header("Location:verification_mail");
+
         							}else{
                         //Fail
         								header("Location:../signup?stats=fail");

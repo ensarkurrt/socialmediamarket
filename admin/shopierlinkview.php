@@ -55,7 +55,7 @@ $takeIds=$ids->fetch(PDO::FETCH_ASSOC);
                                 <p class="muted text-muted"> Örnek: https://www.shopier.com/ShowProductNew/products.php?id=<b>962375</b></p>
                               </div>
 
-                              <input type="button" class="btn btn-success mr-2" onclick="return saveShopierLink()" value="Link Ekle">
+                              <input type="button" class="btn btn-success mr-2" onclick="return saveShopierLink()" value="Link Düzenle">
                             </form>
                           </div>
                         </div>

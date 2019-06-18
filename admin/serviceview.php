@@ -124,7 +124,7 @@ $takeService=$service->fetch(PDO::FETCH_ASSOC);
                               </div>
 
 
-                              <input type="button" class="btn btn-success mr-2" onclick="return saveService()" value="Kategori Kaydet">
+                              <input type="button" class="btn btn-success mr-2" onclick="return saveService()" value="Servis Kaydet">
                             </form>
                           </div>
                         </div>

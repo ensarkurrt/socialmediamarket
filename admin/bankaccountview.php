@@ -54,7 +54,7 @@ $takeIds=$ids->fetch(PDO::FETCH_ASSOC);
                                 <textarea class="ckeditor" id="description" placeholder="Açıklama"><?php echo $takeIds['description']; ?></textarea>
                               </div>
 
-                              <input type="button" class="btn btn-success mr-2" onclick="return saveBankAccount()" value="Link Ekle">
+                              <input type="button" class="btn btn-success mr-2" onclick="return saveBankAccount()" value="Hesabı Düzenle">
                             </form>
                           </div>
                         </div>
